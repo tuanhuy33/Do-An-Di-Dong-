@@ -1,12 +1,12 @@
+import 'package:do_an_di_dong/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'consts/consts.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +14,6 @@ class MyApp extends StatelessWidget {
       title: 'Heathy Food',
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
-      ),
+    );
   }
 }
