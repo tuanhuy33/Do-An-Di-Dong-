@@ -10,9 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: appname,
-      theme: ThemeData(),
-    );
+    return const MaterialApp(
+      title: 'Heathy Food',
+      debugShowCheckedModeBanner: false,
+      home: SplashScreen(),
+      ),
   }
 }
