@@ -21,7 +21,7 @@ class _UserProfilePage extends State<UserProfilePage> {
           children: [
             CircleAvatar(
               radius: 75,
-              backgroundImage: AssetImage('assets/avatar.jpg'),
+              // backgroundImage: AssetImage('assets/avatar.jpg'),
             ),
             UserDetails(
               username: 'JohnDoe',
