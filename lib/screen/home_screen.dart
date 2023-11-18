@@ -17,19 +17,19 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    // _navigatetouserprofile();
-  }
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //   // _navigatetouserprofile();
+  // }
 
-  _navigateSignInScreen() async {
-    Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const SignInScreen(),
-        ));
-  }
+  // _navigateSignInScreen() async {
+  //   Navigator.pushReplacement(
+  //       context,
+  //       MaterialPageRoute(
+  //         builder: (context) => const SignInScreen(),
+  //       ));
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -148,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         right: 15,
                       ),
                       margin: const EdgeInsets.symmetric(
-                          vertical: 60, horizontal: 10),
+                          vertical: 50, horizontal: 10),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
