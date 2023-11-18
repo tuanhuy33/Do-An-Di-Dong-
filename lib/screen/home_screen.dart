@@ -8,14 +8,14 @@ import 'package:flutter/material.dart';
 import 'package:do_an_di_dong/values/app_assets.dart';
 import 'package:do_an_di_dong/values/app_colors.dart';
 
-class WelcomeScreen extends StatefulWidget {
-  const WelcomeScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<WelcomeScreen> createState() => _WelcomeScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     // TODO: implement initState
