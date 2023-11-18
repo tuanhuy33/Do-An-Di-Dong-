@@ -10,9 +10,20 @@ class SignUpScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.secondColor,
-        title: Text(
-          'Đăng Ký',
-          style: TextStyle(color: AppColors.titleColor),
+        title: Container(
+          alignment: Alignment.center,
+          child: Text(
+            'Đăng Ký',
+            style: TextStyle(color: AppColors.titleColor),
+          ),
+        ),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          color: AppColors.textColor,
+          onPressed: () {
+            // Handle back button press
+            print('Back button pressed');
+          },
         ),
       ),
       body: body(),
