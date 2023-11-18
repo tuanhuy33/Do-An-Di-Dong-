@@ -24,7 +24,9 @@ class _CartViewState extends State<CartView> {
           fontWeight: FontWeight.w400,
         ),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Icon(
             Icons.close,
             color: Colors.black,
@@ -106,7 +108,9 @@ class _CartViewState extends State<CartView> {
               ],
             ),
             ElevatedButton(
-              style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => const Color(0xff79AC78))),
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateColor.resolveWith(
+                      (states) => const Color(0xff79AC78))),
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) {

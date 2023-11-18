@@ -1,3 +1,4 @@
+import 'package:do_an_di_dong/screen/cart/cart_view.dart';
 import 'package:do_an_di_dong/values/app_assets.dart';
 import 'package:do_an_di_dong/values/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -82,7 +83,13 @@ class _ProductDetailState extends State<ProductDetail> {
                             child: IconButton(
                               icon: const Icon(Icons.shopping_bag_outlined),
                               iconSize: 25,
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const CartView(),
+                                    ));
+                              },
                             ),
                           ),
                         ],
@@ -199,7 +206,13 @@ class _ProductDetailState extends State<ProductDetail> {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 75),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const CartView(),
+                      ));
+                },
                 child: Container(
                   width: 300,
                   height: 80,

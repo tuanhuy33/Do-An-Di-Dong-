@@ -1,5 +1,6 @@
 import 'package:do_an_di_dong/consts/consts.dart';
 import 'package:do_an_di_dong/screen/SanPham/product_detail.dart';
+import 'package:do_an_di_dong/screen/cart/cart_view.dart';
 import 'package:do_an_di_dong/screen/sign_in/sign_in_screen.dart';
 import 'package:do_an_di_dong/values/list.dart';
 import 'package:do_an_di_dong/widgets_common/categorieswidget.dart';
@@ -143,12 +144,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           ));
                     },
                     child: Container(
-                      padding: const EdgeInsets.only(
-                        left: 15,
-                        right: 15,
-                      ),
+                      padding: const EdgeInsets.only(left: 15, right: 15),
                       margin: const EdgeInsets.symmetric(
-                          vertical: 50, horizontal: 10),
+                          vertical: 55, horizontal: 10),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
@@ -178,26 +176,36 @@ class _HomeScreenState extends State<HomeScreen> {
                               style: TextStyle(fontSize: 16),
                             ),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Padding(
-                                padding: EdgeInsets.only(left: 20, right: 50),
-                                child: Text(
-                                  "10.000",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    color: AppColors.primaryColor,
-                                    fontWeight: FontWeight.bold,
+                          Container(
+                            margin: const EdgeInsets.symmetric(vertical: 13),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 20, right: 50),
+                                  child: Text(
+                                    "10.000",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      color: AppColors.primaryColor,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              IconButton(
-                                  icon:
-                                      const Icon(Icons.shopping_cart_checkout),
-                                  color: AppColors.primaryColor,
-                                  onPressed: () {})
-                            ],
+                                IconButton(
+                                    icon: const Icon(
+                                        Icons.shopping_cart_checkout),
+                                    color: AppColors.primaryColor,
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const CartView(),
+                                          ));
+                                    })
+                              ],
+                            ),
                           ),
                         ],
                       ),

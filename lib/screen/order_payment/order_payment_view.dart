@@ -1,4 +1,5 @@
 import 'package:do_an_di_dong/screen/order_payment/components/cart_item.dart';
+import 'package:do_an_di_dong/screen/voucher/list_voucher.dart';
 import 'package:flutter/material.dart';
 
 class OrderPaymentView extends StatefulWidget {
@@ -263,7 +264,13 @@ class _OrderPaymentViewState extends State<OrderPaymentView> {
                       height: 13,
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ListVoucher(),
+                            ));
+                      },
                       child: const Text(
                         'Chọn/nhập mã',
                         style: TextStyle(
@@ -379,7 +386,9 @@ class _OrderPaymentViewState extends State<OrderPaymentView> {
               ],
             ),
             ElevatedButton(
-              style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => const Color(0xff79AC78))),
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateColor.resolveWith(
+                      (states) => const Color(0xff79AC78))),
               onPressed: () {},
               child: const Text('Thanh Toán'),
             ),
