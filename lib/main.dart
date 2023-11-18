@@ -1,4 +1,4 @@
-import 'package:do_an_di_dong/screen/splash_screen.dart';
+import 'package:do_an_di_dong/screen/Cart/Cart_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Heathy Food',
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: CartScreen(),
     );
   }
 }

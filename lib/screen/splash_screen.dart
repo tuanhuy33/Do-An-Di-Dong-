@@ -1,4 +1,4 @@
-import 'package:do_an_di_dong/screen/home_screen.dart';
+import 'package:do_an_di_dong/screen/welcome_screen.dart';
 import 'package:do_an_di_dong/values/app_assets.dart';
 import 'package:do_an_di_dong/values/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const HomeScreen(),
+          builder: (context) => const WelcomeScreen(),
         ));
   }
 

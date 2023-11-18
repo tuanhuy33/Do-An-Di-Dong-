@@ -1,19 +1,18 @@
 import 'package:do_an_di_dong/consts/consts.dart';
 import 'package:do_an_di_dong/widgets_common/our_button.dart';
 import 'package:flutter/material.dart';
-import 'package:do_an_di_dong/screen/home_screen.dart';
 import 'package:do_an_di_dong/values/app_assets.dart';
 import 'package:do_an_di_dong/values/app_colors.dart';
 import 'user/user_profile.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class WelcomeScreen extends StatefulWidget {
+  const WelcomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   void initState() {
     // TODO: implement initState
