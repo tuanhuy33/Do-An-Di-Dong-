@@ -14,6 +14,8 @@ class AppAssets {
   static const String nav_fruit = '${imagePath}nav_fruit.jgp';
   static const String nav_vegetable = '${imagePath}nav_vegetable.jpg';
   static const String welcom_screen = '${imagePath}welcom_screen.jpg';
+  static const String icon_voucher = '${imagePath}coupon-2-line.png';
+  static const String sign_in = '${imagePath}sign_in.png';
 
   // Đường dẫn ảnh thư mục Do-uong-co-con
   static const String img_beerSG = '${img_beerPath}6-lon-bia-sai-gon.jpg';
