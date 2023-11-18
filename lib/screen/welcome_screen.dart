@@ -1,4 +1,5 @@
 import 'package:do_an_di_dong/consts/consts.dart';
+import 'package:do_an_di_dong/screen/sign_in/sign_in_screen.dart';
 import 'package:do_an_di_dong/widgets_common/our_button.dart';
 import 'package:flutter/material.dart';
 import 'package:do_an_di_dong/values/app_assets.dart';
@@ -20,14 +21,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     // _navigatetouserprofile();
   }
 
-  // _navigatetouserprofile() async {
-  //   await Future.delayed(const Duration(milliseconds: 3500), () {});
-  //   Navigator.pushReplacement(
-  //       context,
-  //       MaterialPageRoute(
-  //         builder: (context) => const UserProfilePage(),
-  //       ));
-  // }
+  _navigateSignInScreen() async {
+    Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const SignInScreen(),
+        ));
+  }
 
   Widget build(BuildContext context) {
     return Scaffold(
