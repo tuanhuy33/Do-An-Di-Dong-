@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Heathy Food',
       debugShowCheckedModeBanner: false,
-      home: SignInScreen(),
+      home: SplashScreen(),
     );
   }
 }
