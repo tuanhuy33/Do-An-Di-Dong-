@@ -1,13 +1,12 @@
 import 'package:do_an_di_dong/consts/consts.dart';
 import 'package:do_an_di_dong/screen/SanPham/product_detail.dart';
+import 'package:do_an_di_dong/screen/sign_in/sign_in_screen.dart';
 import 'package:do_an_di_dong/values/list.dart';
 import 'package:do_an_di_dong/widgets_common/categorieswidget.dart';
 import 'package:do_an_di_dong/widgets_common/our_button.dart';
 import 'package:flutter/material.dart';
-import 'package:do_an_di_dong/screen/home_screen.dart';
 import 'package:do_an_di_dong/values/app_assets.dart';
 import 'package:do_an_di_dong/values/app_colors.dart';
-import 'user/user_profile.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,18 +17,17 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    // _navigatetouserprofile();
-  }
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //   // _navigatetouserprofile();
+  // }
 
-  // _navigatetouserprofile() async {
-  //   await Future.delayed(const Duration(milliseconds: 3500), () {});
+  // _navigateSignInScreen() async {
   //   Navigator.pushReplacement(
   //       context,
   //       MaterialPageRoute(
-  //         builder: (context) => const UserProfilePage(),
+  //         builder: (context) => const SignInScreen(),
   //       ));
   // }
 
@@ -150,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         right: 15,
                       ),
                       margin: const EdgeInsets.symmetric(
-                          vertical: 60, horizontal: 10),
+                          vertical: 50, horizontal: 10),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
