@@ -31,6 +31,15 @@ class ProfileScreen extends StatelessWidget {
             verticalDirection: VerticalDirection
                 .up, // Change to VerticalDirection.down if needed
             children: [
+              Text(
+                'Van Tuan',
+                style: TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                  fontSize: 16,
+                ),
+              ),
+              SizedBox(height: 8),
+              SizedBox(height: 4),
               ClipOval(
                 child: Image.asset(
                   AppAssets.welcom_screen,
@@ -40,21 +49,14 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 8),
+              SizedBox(height: 4),
               Text(
                 'Profile',
                 style: TextStyle(
-                  color: Color.fromARGB(255, 255, 255, 255),
+                  color: const Color.fromARGB(255, 255, 255, 255),
                   fontSize: 20,
                 ),
               ),
-              // SizedBox(height: 4),
-              // Text(
-              //   'Additional Text',
-              //   style: TextStyle(
-              //     color: AppColors.textColor,
-              //     fontSize: 16,
-              //   ),
-              // ),
             ],
           ),
         ),
@@ -81,7 +83,7 @@ class ProfileScreen extends StatelessWidget {
               onPress: () {
                 // Your onPress logic here
               },
-              color: Colors.blue,
+              color: AppColors.primaryColor,
               textColor: Colors.white,
               content: 'Quên Mật Khẩu',
               leftIcon: Icons.lock,
@@ -92,7 +94,7 @@ class ProfileScreen extends StatelessWidget {
               onPress: () {
                 // Your onPress logic here
               },
-              color: Colors.blue,
+              color: AppColors.primaryColor,
               textColor: Colors.white,
               content: 'Trợ giúp',
               leftIcon: Icons.support_agent,
@@ -103,7 +105,7 @@ class ProfileScreen extends StatelessWidget {
               onPress: () {
                 // Your onPress logic here
               },
-              color: Colors.blue,
+              color: AppColors.primaryColor,
               textColor: Colors.white,
               content: 'Lịch Sử',
               leftIcon: Icons.history_edu,
@@ -114,7 +116,7 @@ class ProfileScreen extends StatelessWidget {
               onPress: () {
                 // Your onPress logic here
               },
-              color: Colors.blue,
+              color: AppColors.primaryColor,
               textColor: Colors.white,
               content: 'Đăng Xuất',
               leftIcon: Icons.logout,
