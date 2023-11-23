@@ -18,11 +18,11 @@ class body extends StatelessWidget {
             child: Column(
               children: [
                 PasswordInput(),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 PasswordInput(),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 ConfirmPasswordInput(),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 ourButton(
                   color: AppColors.secondColor,
                   title: "Hoàn Tất",
@@ -43,18 +43,18 @@ class body extends StatelessWidget {
           labelText: "Mật Khẩu",
           hintText: "Mật Khẩu",
           floatingLabelBehavior: FloatingLabelBehavior.always,
-          contentPadding: EdgeInsets.symmetric(
+          contentPadding: const EdgeInsets.symmetric(
             horizontal: 45,
             vertical: 20,
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(28),
-            borderSide: BorderSide(color: AppColors.textColor),
+            borderSide: const BorderSide(color: AppColors.textColor),
             gapPadding: 10,
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(28),
-            borderSide: BorderSide(color: AppColors.textColor),
+            borderSide: const BorderSide(color: AppColors.textColor),
             gapPadding: 10,
           )),
     );
@@ -66,18 +66,18 @@ class body extends StatelessWidget {
           labelText: "Mật Khẩu Mới",
           hintText: "Mật Khẩu Mới",
           floatingLabelBehavior: FloatingLabelBehavior.always,
-          contentPadding: EdgeInsets.symmetric(
+          contentPadding: const EdgeInsets.symmetric(
             horizontal: 45,
             vertical: 20,
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(28),
-            borderSide: BorderSide(color: AppColors.textColor),
+            borderSide: const BorderSide(color: AppColors.textColor),
             gapPadding: 10,
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(28),
-            borderSide: BorderSide(color: AppColors.textColor),
+            borderSide: const BorderSide(color: AppColors.textColor),
             gapPadding: 10,
           )),
     );
@@ -90,18 +90,18 @@ TextFormField ConfirmPasswordInput() {
         labelText: "Xác Nhận Mật Khẩu",
         hintText: "Xác Nhận Mật Khẩu",
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        contentPadding: EdgeInsets.symmetric(
+        contentPadding: const EdgeInsets.symmetric(
           horizontal: 45,
           vertical: 20,
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(28),
-          borderSide: BorderSide(color: AppColors.textColor),
+          borderSide: const BorderSide(color: AppColors.textColor),
           gapPadding: 10,
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(28),
-          borderSide: BorderSide(color: AppColors.textColor),
+          borderSide: const BorderSide(color: AppColors.textColor),
           gapPadding: 10,
         )),
   );
