@@ -20,10 +20,7 @@ class SignUpScreen extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           color: AppColors.textColor,
-          onPressed: () {
-            // Handle back button press
-            print('Back button pressed');
-          },
+          onPressed: () {},
         ),
       ),
       body: body(),

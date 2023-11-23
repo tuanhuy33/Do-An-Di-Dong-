@@ -1,9 +1,9 @@
-import 'package:do_an_di_dong/screen/sign_in/compoments/body.dart';
+import 'package:do_an_di_dong/screen/support_screen/compoments/body.dart';
 import 'package:do_an_di_dong/values/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class SignInScreen extends StatelessWidget {
-  const SignInScreen({super.key});
+class SupportScreen extends StatelessWidget {
+  const SupportScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class SignInScreen extends StatelessWidget {
         title: Container(
           alignment: Alignment.center,
           child: Text(
-            'Đăng Nhập',
+            'Trợ Giúp',
             style: TextStyle(color: AppColors.titleColor),
           ),
         ),
