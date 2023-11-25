@@ -1,7 +1,7 @@
 import 'package:do_an_di_dong/consts/consts.dart';
 import 'package:do_an_di_dong/screen/forgot_password/forgot_password.dart';
 import 'package:do_an_di_dong/screen/shopping_history/shopping_history_view.dart';
-import 'package:do_an_di_dong/screen/user/edit_profile.dart';
+import 'package:do_an_di_dong/screen/profile_screen/edit_profile.dart';
 import 'package:do_an_di_dong/values/app_assets.dart';
 import 'package:do_an_di_dong/values/app_colors.dart';
 import 'package:do_an_di_dong/widgets_common/customIconButton.dart';

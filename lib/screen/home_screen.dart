@@ -3,7 +3,7 @@ import 'package:do_an_di_dong/screen/SanPham/product_detail.dart';
 import 'package:do_an_di_dong/screen/cart/cart_view.dart';
 import 'package:do_an_di_dong/screen/sign_in/sign_in_screen.dart';
 import 'package:do_an_di_dong/values/list.dart';
-import 'package:do_an_di_dong/widgets_common/categorieswidget.dart';
+import 'package:do_an_di_dong/screen/SanPham/categorieswidget.dart';
 import 'package:do_an_di_dong/widgets_common/our_button.dart';
 import 'package:flutter/material.dart';
 import 'package:do_an_di_dong/values/app_assets.dart';
@@ -143,11 +143,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemBuilder: (context, index) {
                   return InkWell(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const ProductDetail(),
-                          ));
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //       builder: (context) => const ProductDetail(),
+                      //     ));
                     },
                     child: Container(
                       padding: const EdgeInsets.only(left: 15, right: 15),
