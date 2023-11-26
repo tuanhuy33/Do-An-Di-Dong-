@@ -2,6 +2,7 @@ import 'package:do_an_di_dong/consts/consts.dart';
 import 'package:do_an_di_dong/screen/forgot_password/forgot_password.dart';
 import 'package:do_an_di_dong/screen/shopping_history/shopping_history_view.dart';
 import 'package:do_an_di_dong/screen/profile_screen/edit_profile.dart';
+import 'package:do_an_di_dong/screen/support_screen/support_screen.dart';
 import 'package:do_an_di_dong/values/app_assets.dart';
 import 'package:do_an_di_dong/values/app_colors.dart';
 import 'package:do_an_di_dong/widgets_common/customIconButton.dart';
@@ -16,16 +17,16 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 220,
         backgroundColor: const Color.fromARGB(255, 134, 193, 133),
-        leading: Container(
-          alignment: Alignment.center,
-          child: IconButton(
-            icon: const Icon(Icons.arrow_back),
-            color: const Color.fromARGB(255, 238, 235, 235),
-            onPressed: () {
-              // Handle back button press
-            },
-          ),
-        ),
+        // leading: Container(
+        //   alignment: Alignment.center,
+        //   child: IconButton(
+        //     icon: const Icon(Icons.arrow_back),
+        //     color: const Color.fromARGB(255, 238, 235, 235),
+        //     onPressed: () {
+        //       // Handle back button press
+        //     },
+        //   ),
+        // ),
         title: Container(
           alignment: Alignment.center,
           child: Column(
@@ -104,12 +105,11 @@ class ProfileScreen extends StatelessWidget {
             const SizedBox(height: 20),
             customIconButton(
               onPress: () {
-                // Your onPress logic here
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //       builder: (context) => ForgotPassword(),
-                //     ));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SupportScreen(),
+                    ));
               },
               color: AppColors.primaryColor,
               textColor: Colors.white,

@@ -1,3 +1,4 @@
+import 'package:do_an_di_dong/screen/order_payment/order_payment_view.dart';
 import 'package:flutter/material.dart';
 
 class OrderDetailView extends StatefulWidget {
@@ -22,7 +23,9 @@ class _OrderDetailViewState extends State<OrderDetailView> {
           fontWeight: FontWeight.w400,
         ),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Icon(
             Icons.close,
             color: Colors.black,
@@ -31,6 +34,197 @@ class _OrderDetailViewState extends State<OrderDetailView> {
       ),
       body: ListView(
         children: [
+          Container(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 15),
+                  child: Row(
+                    children: [
+                      Container(
+                        // color: Colors.red,
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 50,
+                                ),
+                                Container(
+                                  width: 30,
+                                  height: 30,
+                                  decoration: BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.circular(25),
+                                  ),
+                                  child: const Icon(
+                                    Icons.storefront_outlined,
+                                    color: Colors.white,
+                                    size: 20,
+                                  ),
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(left: 3),
+                                  width: 47,
+                                  height: 5,
+                                  decoration: const BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      bottomLeft: Radius.circular(10),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            const Text(
+                              'Đã đặt hàng',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          margin: const EdgeInsets.only(bottom: 26),
+                          height: 5,
+                          decoration: const BoxDecoration(
+                            color: Colors.green,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        // color: Colors.red,
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  width: 30,
+                                  margin: const EdgeInsets.only(right: 10),
+                                  height: 5,
+                                  decoration: const BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.only(
+                                      topRight: Radius.circular(10),
+                                      bottomRight: Radius.circular(10),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width: 30,
+                                  height: 30,
+                                  decoration: BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.circular(25),
+                                  ),
+                                  child: const Icon(
+                                    Icons.local_shipping_outlined,
+                                    color: Colors.white,
+                                    size: 20,
+                                  ),
+                                ),
+                                Container(
+                                  width: 30,
+                                  margin: const EdgeInsets.only(left: 10),
+                                  height: 5,
+                                  decoration: const BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      bottomLeft: Radius.circular(10),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            const Text(
+                              'Đang giao hàng',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          margin: const EdgeInsets.only(bottom: 26),
+                          height: 5,
+                          decoration: const BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.only(
+                                // topLeft: Radius.circular(10),
+                                // bottomLeft: Radius.circular(10),
+                                ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        // color: Colors.red,
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  margin: const EdgeInsets.only(right: 3),
+                                  width: 47,
+                                  height: 5,
+                                  decoration: const BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.only(
+                                      topRight: Radius.circular(10),
+                                      bottomRight: Radius.circular(10),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width: 30,
+                                  height: 30,
+                                  decoration: BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.circular(25),
+                                  ),
+                                  child: const Icon(
+                                    Icons.check_circle_outline_rounded,
+                                    color: Colors.white,
+                                    size: 20,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 50,
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            const Text(
+                              'Hoàn tất',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
           Container(
             padding: const EdgeInsets.all(15),
             child: Column(
@@ -234,7 +428,10 @@ class _OrderDetailViewState extends State<OrderDetailView> {
                   children: [
                     Text(
                       'Thời gian thanh toán',
-                      style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.grey.withOpacity(0.8)),
+                      style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey.withOpacity(0.8)),
                     ),
                     const Text(
                       '16:30 - 2/11/2023',
@@ -252,7 +449,10 @@ class _OrderDetailViewState extends State<OrderDetailView> {
                   children: [
                     Text(
                       'Phương thức thanh toán',
-                      style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.grey.withOpacity(0.8)),
+                      style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey.withOpacity(0.8)),
                     ),
                     const Text(
                       'Thanh toán khi nhận hàng',
@@ -270,7 +470,10 @@ class _OrderDetailViewState extends State<OrderDetailView> {
                   children: [
                     Text(
                       'Số tiên thanh toán',
-                      style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.grey.withOpacity(0.8)),
+                      style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey.withOpacity(0.8)),
                     ),
                     const Text(
                       '900,000đ',
@@ -304,8 +507,16 @@ class _OrderDetailViewState extends State<OrderDetailView> {
           children: [
             Expanded(
               child: ElevatedButton(
-                style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => const Color(0xff79AC78))),
-                onPressed: () {},
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateColor.resolveWith(
+                        (states) => const Color(0xff79AC78))),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => OrderPaymentView(),
+                      ));
+                },
                 child: const Text('Mua lại'),
               ),
             ),
@@ -314,7 +525,9 @@ class _OrderDetailViewState extends State<OrderDetailView> {
             ),
             Expanded(
               child: ElevatedButton(
-                style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => const Color(0xff79AC78))),
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateColor.resolveWith(
+                        (states) => const Color(0xff79AC78))),
                 onPressed: () {},
                 child: const Text('Phản hồi'),
               ),

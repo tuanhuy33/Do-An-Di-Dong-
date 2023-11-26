@@ -7,3 +7,4 @@ FirebaseFirestore firestore = FirebaseFirestore.instance;
 //collections
 const categorytCollection = "LoaiSP";
 const productCollection = "SanPham";
+const oderDetailCollection = "CT_Hoa_Don";
