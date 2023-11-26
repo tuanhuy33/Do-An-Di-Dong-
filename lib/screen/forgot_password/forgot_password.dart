@@ -12,18 +12,20 @@ class ForgotPassword extends StatelessWidget {
         backgroundColor: AppColors.secondColor,
         title: Container(
           alignment: Alignment.center,
-          child: Text(
+          child: const Text(
             'Đổi Mật Khẩu',
             style: TextStyle(color: AppColors.titleColor),
           ),
         ),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           color: AppColors.textColor,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
       ),
-      body: body(),
+      body: const body(),
     );
   }
 }

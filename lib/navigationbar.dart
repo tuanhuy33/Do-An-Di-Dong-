@@ -2,7 +2,8 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:do_an_di_dong/screen/SanPham/list_categories.dart';
 import 'package:do_an_di_dong/screen/SanPham/list_product.dart';
 import 'package:do_an_di_dong/screen/home_screen.dart';
-import 'package:do_an_di_dong/screen/user/edit_profile.dart';
+import 'package:do_an_di_dong/screen/profile_screen/profile_screen.dart';
+import 'package:do_an_di_dong/screen/profile_screen/edit_profile.dart';
 import 'package:do_an_di_dong/screen/voucher/list_voucher.dart';
 import 'package:do_an_di_dong/values/app_assets.dart';
 import 'package:do_an_di_dong/values/app_colors.dart';
@@ -67,7 +68,7 @@ getslectedWidget({required int index}) {
       widget = const ListVoucher();
       break;
     case 3:
-      widget = const EditProfile();
+      widget = const ProfileScreen();
       break;
     default:
       widget = const HomeScreen();

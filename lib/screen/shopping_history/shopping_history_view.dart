@@ -135,7 +135,10 @@ class HistoryItem extends StatelessWidget {
                   children: [
                     Text(
                       'Thời gian thanh toán',
-                      style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.grey.withOpacity(0.8)),
+                      style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey.withOpacity(0.8)),
                     ),
                     Text(
                       time ?? '16:30 - 2/11/2023',
@@ -153,7 +156,10 @@ class HistoryItem extends StatelessWidget {
                   children: [
                     Text(
                       'Phương thức thanh toán',
-                      style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.grey.withOpacity(0.8)),
+                      style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey.withOpacity(0.8)),
                     ),
                     Text(
                       paymentMethod ?? 'Thanh toán khi nhận hàng',
@@ -171,7 +177,10 @@ class HistoryItem extends StatelessWidget {
                   children: [
                     Text(
                       'Số tiên thanh toán',
-                      style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.grey.withOpacity(0.8)),
+                      style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey.withOpacity(0.8)),
                     ),
                     Text(
                       totalPrice ?? '900,000đ',
@@ -193,7 +202,9 @@ class HistoryItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 ElevatedButton(
-                  style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => const Color(0xff79AC78))),
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateColor.resolveWith(
+                          (states) => const Color(0xff79AC78))),
                   onPressed: () {
                     if (onTap2 != null) {
                       onTap2?.call();
@@ -237,7 +248,7 @@ class _ShoppingHistoryViewState extends State<ShoppingHistoryView> {
         ),
         leading: IconButton(
           onPressed: () {
-            // Navigator.of(context).pop();
+            Navigator.of(context).pop();
           },
           icon: const Icon(
             Icons.arrow_back_rounded,

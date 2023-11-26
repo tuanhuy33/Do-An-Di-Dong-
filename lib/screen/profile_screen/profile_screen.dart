@@ -1,4 +1,7 @@
 import 'package:do_an_di_dong/consts/consts.dart';
+import 'package:do_an_di_dong/screen/forgot_password/forgot_password.dart';
+import 'package:do_an_di_dong/screen/shopping_history/shopping_history_view.dart';
+import 'package:do_an_di_dong/screen/profile_screen/edit_profile.dart';
 import 'package:do_an_di_dong/values/app_assets.dart';
 import 'package:do_an_di_dong/values/app_colors.dart';
 import 'package:do_an_di_dong/widgets_common/customIconButton.dart';
@@ -12,11 +15,11 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 220,
-        backgroundColor: Color.fromARGB(255, 134, 193, 133),
+        backgroundColor: const Color.fromARGB(255, 134, 193, 133),
         leading: Container(
           alignment: Alignment.center,
           child: IconButton(
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
             color: const Color.fromARGB(255, 238, 235, 235),
             onPressed: () {
               // Handle back button press
@@ -49,7 +52,6 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 8),
-              SizedBox(height: 4),
               Text(
                 'Profile',
                 style: TextStyle(
@@ -64,10 +66,15 @@ class ProfileScreen extends StatelessWidget {
           Container(
             alignment: Alignment.center,
             child: IconButton(
-              icon: Icon(Icons.edit),
-              color: Color.fromARGB(255, 255, 255, 255),
+              icon: const Icon(Icons.edit),
+              color: const Color.fromARGB(255, 255, 255, 255),
               onPressed: () {
                 // Handle edit button press
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const EditProfile(),
+                    ));
               },
             ),
           ),
@@ -78,10 +85,15 @@ class ProfileScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             customIconButton(
               onPress: () {
                 // Your onPress logic here
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ForgotPassword(),
+                    ));
               },
               color: AppColors.primaryColor,
               textColor: Colors.white,
@@ -89,10 +101,15 @@ class ProfileScreen extends StatelessWidget {
               leftIcon: Icons.lock,
               rightIcon: Icons.arrow_forward,
             ).box.width(context.screenWidth - 80).make(),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             customIconButton(
               onPress: () {
                 // Your onPress logic here
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //       builder: (context) => ForgotPassword(),
+                //     ));
               },
               color: AppColors.primaryColor,
               textColor: Colors.white,
@@ -100,10 +117,15 @@ class ProfileScreen extends StatelessWidget {
               leftIcon: Icons.support_agent,
               rightIcon: Icons.arrow_forward,
             ).box.width(context.screenWidth - 80).make(),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             customIconButton(
               onPress: () {
                 // Your onPress logic here
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ShoppingHistoryView(),
+                    ));
               },
               color: AppColors.primaryColor,
               textColor: Colors.white,
@@ -111,10 +133,15 @@ class ProfileScreen extends StatelessWidget {
               leftIcon: Icons.history_edu,
               rightIcon: Icons.arrow_forward,
             ).box.width(context.screenWidth - 80).make(),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             customIconButton(
               onPress: () {
                 // Your onPress logic here
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //       builder: (context) => const ShoppingHistoryView(),
+                //     ));
               },
               color: AppColors.primaryColor,
               textColor: Colors.white,
@@ -122,7 +149,7 @@ class ProfileScreen extends StatelessWidget {
               leftIcon: Icons.logout,
               rightIcon: Icons.arrow_forward,
             ).box.width(context.screenWidth - 80).make(),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
           ],
         ),
       ),

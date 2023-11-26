@@ -11,7 +11,7 @@ const List lstDanhMuc = [
   strRuou,
   strDongHop
 ];
-
+const List lsTitlePanel = [strRauCu, strGiaVi, strNuocNgot, strTraiCay];
 const List lsVoucher = [
   {
     "Content": "Giảm 10.000 cho hoá đơn từ 90.000",
