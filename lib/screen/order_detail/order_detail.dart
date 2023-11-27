@@ -1,3 +1,4 @@
+import 'package:do_an_di_dong/screen/order_payment/order_payment_view.dart';
 import 'package:flutter/material.dart';
 
 class OrderDetailView extends StatefulWidget {
@@ -22,7 +23,9 @@ class _OrderDetailViewState extends State<OrderDetailView> {
           fontWeight: FontWeight.w400,
         ),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Icon(
             Icons.close,
             color: Colors.black,
@@ -425,7 +428,10 @@ class _OrderDetailViewState extends State<OrderDetailView> {
                   children: [
                     Text(
                       'Thời gian thanh toán',
-                      style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.grey.withOpacity(0.8)),
+                      style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey.withOpacity(0.8)),
                     ),
                     const Text(
                       '16:30 - 2/11/2023',
@@ -443,7 +449,10 @@ class _OrderDetailViewState extends State<OrderDetailView> {
                   children: [
                     Text(
                       'Phương thức thanh toán',
-                      style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.grey.withOpacity(0.8)),
+                      style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey.withOpacity(0.8)),
                     ),
                     const Text(
                       'Thanh toán khi nhận hàng',
@@ -461,7 +470,10 @@ class _OrderDetailViewState extends State<OrderDetailView> {
                   children: [
                     Text(
                       'Số tiên thanh toán',
-                      style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.grey.withOpacity(0.8)),
+                      style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey.withOpacity(0.8)),
                     ),
                     const Text(
                       '900,000đ',
@@ -495,8 +507,16 @@ class _OrderDetailViewState extends State<OrderDetailView> {
           children: [
             Expanded(
               child: ElevatedButton(
-                style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => const Color(0xff79AC78))),
-                onPressed: () {},
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateColor.resolveWith(
+                        (states) => const Color(0xff79AC78))),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => OrderPaymentView(),
+                      ));
+                },
                 child: const Text('Mua lại'),
               ),
             ),
@@ -505,7 +525,9 @@ class _OrderDetailViewState extends State<OrderDetailView> {
             ),
             Expanded(
               child: ElevatedButton(
-                style: ButtonStyle(backgroundColor: MaterialStateColor.resolveWith((states) => const Color(0xff79AC78))),
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateColor.resolveWith(
+                        (states) => const Color(0xff79AC78))),
                 onPressed: () {},
                 child: const Text('Phản hồi'),
               ),

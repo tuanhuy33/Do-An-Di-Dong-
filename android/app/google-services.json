@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "518571498991",
+    "project_id": "heathy-food",
+    "storage_bucket": "heathy-food.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518571498991:android:dc801136d15f5180586a1a",
+        "android_client_info": {
+          "package_name": "com.example.do_an_di_dong"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIQrKLSuoMrZB-0xU8v1o7I6OYpFmMvSM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

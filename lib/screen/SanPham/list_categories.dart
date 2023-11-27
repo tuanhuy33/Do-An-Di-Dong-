@@ -1,6 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:do_an_di_dong/screen/SanPham/list_product.dart';
+import 'package:do_an_di_dong/services/firestore_services.dart';
 import 'package:do_an_di_dong/values/app_colors.dart';
 import 'package:do_an_di_dong/values/list.dart';
+import 'package:do_an_di_dong/widgets_common/loading_indicator.dart';
 import 'package:flutter/material.dart';
 
 class ListCategory extends StatelessWidget {
@@ -130,7 +133,9 @@ class ListCategory extends StatelessWidget {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => const ListProduct(),
+                                      builder: (context) => ListProduct(
+                                        title: lstDanhMuc[index],
+                                      ),
                                     ));
                               },
                             ),
@@ -148,6 +153,43 @@ class ListCategory extends StatelessWidget {
     );
   }
 }
+
+// ListView.builder(
+//                   itemCount: lstDanhMuc.length,
+//                   itemBuilder: (context, index) {
+//                     return Container(
+//                       padding:
+//                           const EdgeInsets.only(top: 20, left: 22, right: 22),
+//                       child: Column(
+//                         children: [
+//                           SizedBox(
+//                             width: double.infinity,
+//                             height: 50,
+//                             child: ElevatedButton(
+//                               style: ElevatedButton.styleFrom(
+//                                   backgroundColor:
+//                                       const Color.fromRGBO(237, 255, 223, 1),
+//                                   shape: RoundedRectangleBorder(
+//                                       borderRadius: BorderRadius.circular(15))),
+//                               child: Text(
+//                                 lstDanhMuc[index],
+//                                 style: const TextStyle(
+//                                     fontSize: 20, color: Colors.black54),
+//                               ),
+//                               onPressed: () {
+//                                 Navigator.push(
+//                                     context,
+//                                     MaterialPageRoute(
+//                                       builder: (context) => const ListProduct(),
+//                                     ));
+//                               },
+//                             ),
+//                           )
+//                         ],
+//                       ),
+//                     );
+//                   },
+//                 ),
 
 // Container(
 //               padding: const EdgeInsets.only(top: 20, left: 22, right: 22),

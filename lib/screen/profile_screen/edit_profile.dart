@@ -82,7 +82,15 @@ class _EditProfileState extends State<EditProfile> {
                             child: IconButton(
                               icon: const Icon(Icons.save_alt_rounded),
                               iconSize: 25,
-                              onPressed: () {},
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => const AlertDialog(
+                                    title: Text("Thông Báo!"),
+                                    content: Text("Lưu Thành Công"),
+                                  ),
+                                );
+                              },
                             ),
                           ),
                         ],

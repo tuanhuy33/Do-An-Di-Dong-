@@ -42,30 +42,30 @@ class _ListVoucherState extends State<ListVoucher> {
                       Row(
                         //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          // Container(
-                          //   decoration: BoxDecoration(
-                          //     color: AppColors.secondColor,
-                          //     borderRadius: const BorderRadius.all(
-                          //       Radius.circular(10),
-                          //     ),
-                          //     boxShadow: [
-                          //       BoxShadow(
-                          //           color: Colors.black.withOpacity(0.5),
-                          //           blurRadius: 3,
-                          //           spreadRadius: 0,
-                          //           offset: const Offset(0, 4)),
-                          //     ],
-                          //   ),
-                          //   height: 40,
-                          //   width: 40,
-                          //   child: IconButton(
-                          //     icon: const Icon(Icons.arrow_back_ios_rounded),
-                          //     iconSize: 20,
-                          //     onPressed: () {
-                          //       Navigator.pop(context);
-                          //     },
-                          //   ),
-                          // ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: AppColors.secondColor,
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(10),
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.black.withOpacity(0.5),
+                                    blurRadius: 3,
+                                    spreadRadius: 0,
+                                    offset: const Offset(0, 4)),
+                              ],
+                            ),
+                            height: 40,
+                            width: 40,
+                            child: IconButton(
+                              icon: const Icon(Icons.arrow_back_ios_rounded),
+                              iconSize: 20,
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                            ),
+                          ),
                           // Container(
                           //   decoration: BoxDecoration(
                           //       color: AppColors.secondColor,
@@ -87,10 +87,8 @@ class _ListVoucherState extends State<ListVoucher> {
                           //     onPressed: () {},
                           //   ),
                           // ),
-
                           Container(
-                              margin:
-                                  const EdgeInsets.symmetric(horizontal: 70),
+                              padding: const EdgeInsets.only(left: 70, top: 15),
                               child: const Text(
                                 "Khuyến Mãi",
                                 style: TextStyle(
