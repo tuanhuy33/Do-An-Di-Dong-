@@ -48,3 +48,4 @@ const List lsVoucher = [
 ];
 
 final List lsSlider = [slider1, slider2, slider3, slider4, slider5];
+const List lsNav = [nav1, nav2, nav3, nav4];

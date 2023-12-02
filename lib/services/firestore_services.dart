@@ -21,6 +21,11 @@ class FirestoreServices {
         .snapshots();
   }
 
+  //get voucher
+  static getVoucher() {
+    return firestore.collection(voucherCollection).snapshots();
+  }
+
   // static getProductByName(name) {
   //   return firestore
   //       .collection(productCollection)
