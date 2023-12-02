@@ -1,5 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:do_an_di_dong/screen/SanPham/product_detail.dart';
 import 'package:do_an_di_dong/screen/order_payment/components/cart_item.dart';
 import 'package:do_an_di_dong/screen/order_payment/order_payment_view.dart';
+import 'package:do_an_di_dong/services/firestore_services.dart';
+import 'package:do_an_di_dong/values/app_colors.dart';
+import 'package:do_an_di_dong/widgets_common/loading_indicator.dart';
 import 'package:flutter/material.dart';
 
 class CartView extends StatefulWidget {
@@ -10,6 +15,8 @@ class CartView extends StatefulWidget {
 }
 
 class _CartViewState extends State<CartView> {
+  get title => null;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,13 +71,85 @@ class _CartViewState extends State<CartView> {
               ],
             ),
           ),
-          const Column(
-            children: [
-              CartItemWiget(),
-              CartItemWiget(),
-              CartItemWiget(),
-            ],
-          ),
+          StreamBuilder(
+              stream: FirestoreServices.getProductsCart(),
+              builder: (BuildContext context,
+                  AsyncSnapshot<QuerySnapshot> snapshot) {
+                if (!snapshot.hasData) {
+                  return Center(
+                    child: loadingIndicator(),
+                  );
+                } else if (snapshot.data!.docs.isEmpty) {
+                  return const Center(
+                    child: Text("Không Tìm Thấy Sản Phẩm !!"),
+                  );
+                } else {
+                  var data = snapshot.data!.docs;
+                  return Column(
+                    children: [
+                      ...List.generate(
+                          data.length,
+                          (index) => CartItemWiget(
+                                image: data[index]['Hinh_Anh'],
+                                price: data[index]['Gia'].toString(),
+                                productName: data[index]['Ten_SP'],
+                                qty: data[index]['soluong'],
+                                decrement: () async {
+                                  FirebaseFirestore firestore =
+                                      FirebaseFirestore.instance;
+                                  QuerySnapshot querySnapshot = await firestore
+                                      .collection('cartCollection')
+                                      .where('Ma_SP',
+                                          isEqualTo: data[index]['Ma_SP'])
+                                      .get();
+                                  if (querySnapshot.docs.isNotEmpty) {
+                                    Object? updateItem =
+                                        querySnapshot.docs.first.data();
+                                    int oldQt = (updateItem
+                                        as Map<String, dynamic>)['soluong'];
+                                    await querySnapshot.docs.first.reference
+                                        .update({'soluong': --oldQt});
+                                  }
+                                },
+                                increment: () async {
+                                  FirebaseFirestore firestore =
+                                      FirebaseFirestore.instance;
+                                  QuerySnapshot querySnapshot = await firestore
+                                      .collection('cartCollection')
+                                      .where('Ma_SP',
+                                          isEqualTo: data[index]['Ma_SP'])
+                                      .get();
+                                  if (querySnapshot.docs.isNotEmpty) {
+                                    Object? updateItem =
+                                        querySnapshot.docs.first.data();
+                                    int oldQt = (updateItem
+                                        as Map<String, dynamic>)['soluong'];
+                                    await querySnapshot.docs.first.reference
+                                        .update({'soluong': ++oldQt});
+                                  }
+                                },
+                                onDelete: () async {
+                                  FirebaseFirestore firestore =
+                                      FirebaseFirestore.instance;
+                                  QuerySnapshot querySnapshot = await firestore
+                                      .collection('cartCollection')
+                                      .where('Ma_SP',
+                                          isEqualTo: data[index]['Ma_SP'])
+                                      .get();
+                                  if (querySnapshot.docs.isNotEmpty) {
+                                    Object? updateItem =
+                                        querySnapshot.docs.first.data();
+                                    int oldQt = (updateItem
+                                        as Map<String, dynamic>)['soluong'];
+                                    await querySnapshot.docs.first.reference
+                                        .delete();
+                                  }
+                                },
+                              ))
+                    ],
+                  );
+                }
+              })
         ],
       ),
       bottomNavigationBar: Container(
@@ -86,7 +165,7 @@ class _CartViewState extends State<CartView> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Column(
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -97,14 +176,35 @@ class _CartViewState extends State<CartView> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Text(
-                  '30,000đ',
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xff79AC78),
-                  ),
-                ),
+                StreamBuilder(
+                    stream: FirestoreServices.getProductsCart(),
+                    builder: (BuildContext context,
+                        AsyncSnapshot<QuerySnapshot> snapshot) {
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: loadingIndicator(),
+                        );
+                      } else if (snapshot.data!.docs.isEmpty) {
+                        return const Center(
+                          child: Text("Không Tìm Thấy Sản Phẩm !!"),
+                        );
+                      } else {
+                        var data = snapshot.data!.docs;
+                        int totalPr = 0;
+                        for (var item in data) {
+                          totalPr = totalPr +
+                              ((item['Gia'] as int) * (item['soluong'] as int));
+                        }
+                        return Text(
+                          '$totalPrđ',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff79AC78),
+                          ),
+                        );
+                      }
+                    })
               ],
             ),
             ElevatedButton(
@@ -118,7 +218,7 @@ class _CartViewState extends State<CartView> {
                   },
                 ));
               },
-              child: const Text('Đặt mua (3)'),
+              child: const Text('Đặt mua ()'),
             ),
           ],
         ),

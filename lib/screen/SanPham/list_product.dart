@@ -151,7 +151,8 @@ class ListProduct extends StatelessWidget {
                                 MaterialPageRoute(
                                   builder: (context) => ProductDetail(
                                     title: "${data[index]['Ten_SP']}",
-                                    data: data[index],
+                                    data: data[index].data(),
+                                    id: data[index].id,
                                   ),
                                 ));
                           },
