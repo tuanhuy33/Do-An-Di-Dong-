@@ -194,7 +194,7 @@ class ProductDetail extends StatelessWidget {
                     ),
                     TextSpan(
                       text:
-                          "${data['NCC']}                                                           ",
+                          "${data['NCC']}                                                                                          ",
                       style: const TextStyle(color: Colors.black),
                     ),
                     const TextSpan(

@@ -9,10 +9,11 @@ class AppAssets {
   static const String img_fruitPath = 'assets/images/Trai-cay/';
 
   // Đường dẫn ảnh thư mục images
-  static const String nav_meat = '${imagePath}meat_nav.png';
-  static const String nav_drink = '${imagePath}nav_drink.jpg';
-  static const String nav_fruit = '${imagePath}nav_fruit.jgp';
-  static const String nav_vegetable = '${imagePath}nav_vegetable.jpg';
+  // static const String nav_meat = '${imagePath}meat_nav.png';
+  // static const String nav_drink = '${imagePath}nav_drink.jpg';
+  // static const String nav_fruit = '${imagePath}nav_fruit.jgp';
+  // static const String nav_salt = '${imagePath}nav_salt.png';
+  // static const String nav_vegetable = '${imagePath}nav_vegetable.jpg';
   static const String welcom_screen = '${imagePath}welcom_screen.jpg';
   static const String icon_voucher = '${imagePath}coupon-2-line.png';
   static const String sign_in = '${imagePath}sign_in.png';
