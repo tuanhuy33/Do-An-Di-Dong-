@@ -46,7 +46,7 @@ class CategoriesWidget extends StatelessWidget {
                           children: [
                             ClipOval(
                               child: Image.asset(
-                                "assets/images/nav_1.png",
+                                lsNav[index],
                                 width: 30,
                                 height: 40,
                               ),

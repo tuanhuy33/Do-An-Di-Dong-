@@ -1,22 +1,20 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:do_an_di_dong/consts/consts.dart';
 import 'package:do_an_di_dong/screen/SanPham/product_detail.dart';
 import 'package:do_an_di_dong/screen/cart/cart_view.dart';
 import 'package:do_an_di_dong/screen/sign_in/sign_in_screen.dart';
+import 'package:do_an_di_dong/services/firestore_services.dart';
 import 'package:do_an_di_dong/values/list.dart';
 import 'package:do_an_di_dong/screen/SanPham/categorieswidget.dart';
+import 'package:do_an_di_dong/widgets_common/loading_indicator.dart';
 import 'package:do_an_di_dong/widgets_common/our_button.dart';
 import 'package:flutter/material.dart';
 import 'package:do_an_di_dong/values/app_assets.dart';
 import 'package:do_an_di_dong/values/app_colors.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   @override
   // void initState() {
   //   // TODO: implement initState
@@ -32,6 +30,8 @@ class _HomeScreenState extends State<HomeScreen> {
   //       ));
   // }
 
+  @override
+  final String title = "Sản Phẩm Hot";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             const CategoriesWidget(),
-
+            // slider
             SizedBox(
               height: 100,
               child: Column(
@@ -129,97 +129,119 @@ class _HomeScreenState extends State<HomeScreen> {
             Container(
               alignment: Alignment.topLeft,
               padding: const EdgeInsets.only(
-                top: 20,
+                top: 30,
               ),
-              child: const Text(
-                "Sản Phẩm Hot",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              child: Text(
+                title,
+                style:
+                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
             Expanded(
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 10,
-                itemBuilder: (context, index) {
-                  return InkWell(
-                    onTap: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //       builder: (context) => const ProductDetail(),
-                      //     ));
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.only(left: 15, right: 15),
-                      margin: const EdgeInsets.symmetric(
-                          vertical: 55, horizontal: 10),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black.withOpacity(0.25),
-                              blurRadius: 4,
-                              offset: const Offset(0, 4))
-                        ],
-                      ),
-                      child: Column(
-                        children: [
-                          Container(
-                            margin: const EdgeInsets.all(5),
-                            child: Image.asset(
-                              AppAssets.img_rau_muong,
-                              height: 100,
-                              width: 100,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          Container(
-                            padding: const EdgeInsets.only(top: 20, bottom: 10),
-                            alignment: Alignment.centerLeft,
-                            child: const Text(
-                              "Rau Muống Thuỷ Canh",
-                              style: TextStyle(fontSize: 16),
-                            ),
-                          ),
-                          Container(
-                            margin: const EdgeInsets.symmetric(vertical: 13),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                const Padding(
-                                  padding: EdgeInsets.only(left: 20, right: 50),
-                                  child: Text(
-                                    "10.000",
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      color: AppColors.primaryColor,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                                IconButton(
-                                    icon: const Icon(
-                                        Icons.shopping_cart_checkout),
-                                    color: AppColors.primaryColor,
-                                    onPressed: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                const CartView(),
-                                          ));
-                                    })
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                child: StreamBuilder(
+              stream: FirestoreServices.getProducts(title),
+              builder: (BuildContext context,
+                  AsyncSnapshot<QuerySnapshot> snapshot) {
+                if (!snapshot.hasData) {
+                  return Center(
+                    child: loadingIndicator(),
                   );
-                },
-              ),
-            )
+                } else if (snapshot.data!.docs.isEmpty) {
+                  return const Center(
+                    child: Text("Không Có Sản Phẩm !!"),
+                  );
+                } else {
+                  var data = snapshot.data!.docs;
+                  return ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: data.length,
+                    itemBuilder: (context, index) {
+                      return InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ProductDetail(
+                                  title: "${data[index]['Ten_SP']}",
+                                  data: data[index],
+                                ),
+                              ));
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.only(left: 15, right: 15),
+                          margin: const EdgeInsets.symmetric(
+                              vertical: 60, horizontal: 5),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.black.withOpacity(0.25),
+                                  blurRadius: 4,
+                                  offset: const Offset(0, 4))
+                            ],
+                          ),
+                          child: Column(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.all(8),
+                                child: Image.network(
+                                  data[index]['Hinh_Anh'],
+                                  height: 100,
+                                  width: 150,
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                              Container(
+                                padding: const EdgeInsets.only(top: 10),
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  "${data[index]['Ten_SP']}",
+                                  style: const TextStyle(fontSize: 18),
+                                ),
+                              ),
+                              Container(
+                                padding: const EdgeInsets.only(top: 50),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          10, 0, 50, 0),
+                                      child: Text(
+                                        "${data[index]['Gia']}",
+                                        style: const TextStyle(
+                                          fontSize: 20,
+                                          color: AppColors.primaryColor,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                    IconButton(
+                                        icon: const Icon(
+                                            Icons.shopping_cart_checkout),
+                                        color: AppColors.primaryColor,
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const CartView(),
+                                              ));
+                                        })
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                }
+              },
+            )),
           ],
         ),
       ),
