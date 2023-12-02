@@ -1,7 +1,6 @@
 import 'dart:io';
 
-import 'package:do_an_di_dong/screen/home_screen.dart';
-import 'package:do_an_di_dong/screen/splash_screen.dart';
+import 'package:do_an_di_dong/screen/order_detail/order_detail.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -29,7 +28,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Heathy Food',
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: OrderDetailView(),
     );
   }
 }
