@@ -58,14 +58,6 @@ class _CartViewState extends State<CartView> {
                     style: TextStyle(
                       color: Colors.black,
                     ),
-                    children: [
-                      TextSpan(
-                        text: '(2)',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
                   ),
                 ),
               ],
@@ -218,7 +210,7 @@ class _CartViewState extends State<CartView> {
                   },
                 ));
               },
-              child: const Text('Đặt mua ()'),
+              child: const Text('Đặt mua'),
             ),
           ],
         ),
