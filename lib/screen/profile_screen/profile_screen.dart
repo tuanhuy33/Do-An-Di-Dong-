@@ -2,10 +2,12 @@ import 'package:do_an_di_dong/consts/consts.dart';
 import 'package:do_an_di_dong/screen/forgot_password/forgot_password.dart';
 import 'package:do_an_di_dong/screen/shopping_history/shopping_history_view.dart';
 import 'package:do_an_di_dong/screen/profile_screen/edit_profile.dart';
+import 'package:do_an_di_dong/screen/sign_in/sign_in_screen.dart';
 import 'package:do_an_di_dong/screen/support_screen/support_screen.dart';
 import 'package:do_an_di_dong/values/app_assets.dart';
 import 'package:do_an_di_dong/values/app_colors.dart';
 import 'package:do_an_di_dong/widgets_common/customIconButton.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -35,15 +37,15 @@ class ProfileScreen extends StatelessWidget {
             verticalDirection: VerticalDirection
                 .up, // Change to VerticalDirection.down if needed
             children: [
-              Text(
+              const Text(
                 'Van Tuan',
                 style: TextStyle(
                   color: Color.fromARGB(255, 255, 255, 255),
                   fontSize: 16,
                 ),
               ),
-              SizedBox(height: 8),
-              SizedBox(height: 4),
+              const SizedBox(height: 8),
+              const SizedBox(height: 4),
               ClipOval(
                 child: Image.asset(
                   AppAssets.welcom_screen,
@@ -52,11 +54,11 @@ class ProfileScreen extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              SizedBox(height: 8),
-              Text(
+              const SizedBox(height: 8),
+              const Text(
                 'Profile',
                 style: TextStyle(
-                  color: const Color.fromARGB(255, 255, 255, 255),
+                  color: Color.fromARGB(255, 255, 255, 255),
                   fontSize: 20,
                 ),
               ),
@@ -108,7 +110,7 @@ class ProfileScreen extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SupportScreen(),
+                      builder: (context) => const SupportScreen(),
                     ));
               },
               color: AppColors.primaryColor,
@@ -136,6 +138,12 @@ class ProfileScreen extends StatelessWidget {
             const SizedBox(height: 20),
             customIconButton(
               onPress: () {
+                FirebaseAuth.instance.signOut();
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SignInScreen(),
+                    ));
                 // Your onPress logic here
                 // Navigator.push(
                 //     context,

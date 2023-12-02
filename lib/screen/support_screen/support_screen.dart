@@ -9,23 +9,14 @@ class SupportScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.secondColor,
-        title: Container(
-          alignment: Alignment.center,
-          child: Text(
-            'Trợ Giúp',
-            style: TextStyle(color: AppColors.titleColor),
-          ),
+        backgroundColor: AppColors.primaryColor,
+        title: const Text(
+          'Trợ Giúp',
+          style: TextStyle(color: Colors.white),
         ),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          color: AppColors.textColor,
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
+        centerTitle: true,
       ),
-      body: body(),
+      body: const body(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:do_an_di_dong/consts/firebase_const.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class FirestoreServices {
   //get data LoaiSP
@@ -32,4 +33,30 @@ class FirestoreServices {
   //       .where("Ten_SP", isEqualTo: name)
   //       .snapshots();
   // }
+}
+
+class FireAuthService {
+  Future<User?> signUpWithEmailAndPassword(
+      String email, String password) async {
+    try {
+      UserCredential credential = await auth.createUserWithEmailAndPassword(
+          email: email, password: password);
+      return credential.user;
+    } catch (e) {
+      print('Có Lỗi Xãy Ra');
+    }
+    return null;
+  }
+
+  Future<User?> signInWithEmailAndPassword(
+      String email, String password) async {
+    try {
+      UserCredential credential = await auth.signInWithEmailAndPassword(
+          email: email, password: password);
+      return credential.user;
+    } catch (e) {
+      print('Có Lỗi Xãy Ra');
+    }
+    return null;
+  }
 }

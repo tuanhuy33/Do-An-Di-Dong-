@@ -24,9 +24,9 @@ class body extends StatelessWidget {
                 ConfirmPasswordInput(),
                 const SizedBox(height: 20),
                 ourButton(
-                  color: AppColors.secondColor,
+                  color: AppColors.primaryColor,
                   title: "Hoàn Tất",
-                  textColor: AppColors.primaryColor,
+                  textColor: Colors.white,
                   onPress: () {},
                 ).box.width(context.screenWidth - 100).make(),
               ],
