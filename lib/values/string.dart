@@ -4,4 +4,4 @@ const strThit = "Thịt";
 const strRuou = "Rượu Bia";
 const strNuocNgot = "Nước Ngọt";
 const strGiaVi = "Gia Vị";
-const strDongHop = "Đô Đóng Hộp";
+const strDongHop = "Đồ Đóng Hộp";

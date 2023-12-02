@@ -163,6 +163,18 @@ class VoucherDetail extends StatelessWidget {
                               "${data['Ma_Khuyen_Mai']}                                                           ",
                           style: const TextStyle(color: Colors.black),
                         ),
+                        const TextSpan(
+                          text: "- Số tiền khuyến mãi: ",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 16),
+                        ),
+                        TextSpan(
+                          text:
+                              "${data['Tien_KM']}                                                           ",
+                          style: const TextStyle(color: Colors.black),
+                        ),
                       ],
                     ),
                   ),
