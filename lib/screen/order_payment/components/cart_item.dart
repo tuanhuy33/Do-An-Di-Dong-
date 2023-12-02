@@ -54,7 +54,7 @@ class CartItemWiget extends StatelessWidget {
             margin: const EdgeInsets.symmetric(horizontal: 5),
             width: 75,
             height: 75,
-            child: Image.asset(image ?? 'assets/images/Rau/cai_thia.jpg'),
+            child: Image.network(image!),
           ),
           Expanded(
             child: Column(

@@ -15,6 +15,11 @@ class FirestoreServices {
         .snapshots();
   }
 
+  //get data sanpham by LoaiSP
+  static getProductsCart() {
+    return firestore.collection('cartCollection').snapshots();
+  }
+
   static getOrderDetails(category) {
     return firestore
         .collection(productCollection)
