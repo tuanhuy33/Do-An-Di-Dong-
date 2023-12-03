@@ -197,7 +197,8 @@ class HomeScreen extends StatelessWidget {
                                 alignment: Alignment.centerLeft,
                                 child: Text(
                                   "${data[index]['Ten_SP']}",
-                                  style: const TextStyle(fontSize: 18),
+                                  softWrap: true,
+                                  style: const TextStyle(fontSize: 15),
                                 ),
                               ),
                               Container(

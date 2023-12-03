@@ -9,21 +9,12 @@ class ForgotPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.secondColor,
-        title: Container(
-          alignment: Alignment.center,
-          child: const Text(
-            'Đổi Mật Khẩu',
-            style: TextStyle(color: AppColors.titleColor),
-          ),
+        backgroundColor: AppColors.primaryColor,
+        title: const Text(
+          'Đổi Mật Khẩu',
+          style: TextStyle(color: Colors.white),
         ),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          color: AppColors.textColor,
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
+        centerTitle: true,
       ),
       body: const body(),
     );

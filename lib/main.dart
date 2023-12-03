@@ -1,6 +1,8 @@
 import 'dart:io';
 
 import 'package:do_an_di_dong/screen/home_screen.dart';
+import 'package:do_an_di_dong/screen/sign_in/sign_in_screen.dart';
+import 'package:do_an_di_dong/screen/sign_up/sign_up_screen.dart';
 import 'package:do_an_di_dong/screen/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

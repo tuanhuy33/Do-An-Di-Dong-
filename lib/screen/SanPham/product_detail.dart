@@ -1,12 +1,18 @@
+import 'dart:convert';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:do_an_di_dong/consts/firebase_const.dart';
 import 'package:do_an_di_dong/screen/cart/cart_view.dart';
 import 'package:do_an_di_dong/values/app_assets.dart';
 import 'package:do_an_di_dong/values/app_colors.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetail extends StatelessWidget {
   final String? title;
   final dynamic data;
-  const ProductDetail({Key? key, required this.title, this.data})
+  final String? id;
+  const ProductDetail({Key? key, required this.title, this.data, this.id})
       : super(key: key);
 
   @override
@@ -222,12 +228,31 @@ class ProductDetail extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const CartView(),
-                      ));
+                onTap: () async {
+                  // Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //      builder: (context) => const CartView(),
+                  //     ));
+                  FirebaseFirestore firestore = FirebaseFirestore.instance;
+                  QuerySnapshot querySnapshot = await firestore
+                      .collection('cartCollection')
+                      .where('Ma_SP', isEqualTo: data['Ma_SP'])
+                      .get();
+                  if (querySnapshot.docs.isEmpty) {
+                    await firestore.collection('cartCollection').add({
+                      ...data,
+                      'soluong': 1,
+                    });
+                  } else {
+                    Object? updateItem = querySnapshot.docs.first.data();
+                    int oldQt = (updateItem as Map<String, dynamic>)['soluong'];
+                    await querySnapshot.docs.first.reference
+                        .update({'soluong': ++oldQt});
+                  }
+                  // ignore: use_build_context_synchronously
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('đã thêm sản phẩm')));
                 },
                 child: Container(
                   width: 300,

@@ -1,4 +1,5 @@
 import 'package:do_an_di_dong/navigationbar.dart';
+import 'package:do_an_di_dong/screen/sign_in/sign_in_screen.dart';
 import 'package:do_an_di_dong/screen/welcome_screen.dart';
 import 'package:do_an_di_dong/values/app_assets.dart';
 import 'package:do_an_di_dong/values/app_colors.dart';
@@ -24,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const BottomNav(),
+          builder: (context) => const SignInScreen(),
         ));
   }
 
